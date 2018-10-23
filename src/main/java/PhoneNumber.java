@@ -1,9 +1,9 @@
 public class PhoneNumber {
-    private int mobilePhone;
-    private int workingPhone;
-    private int homePhone;
+    private String mobilePhone;
+    private String workingPhone;
+    private String homePhone;
 
-    PhoneNumber(int mobilePhone, int workingPhone, int homePhone) {
+    PhoneNumber(String mobilePhone, String workingPhone, String homePhone) {
         this.mobilePhone = mobilePhone;
         this.workingPhone = workingPhone;
         this.homePhone = homePhone;
@@ -13,15 +13,15 @@ public class PhoneNumber {
         return "mobile phone: " + mobilePhone + ", working number: " + workingPhone + ", home number: " + homePhone;
     }
 
-    public int getMobilePhone() {
+    public String getMobilePhone() {
         return mobilePhone;
     }
 
-    public int getWorkingPhone() {
+    public String getWorkingPhone() {
         return workingPhone;
     }
 
-    public int getHomePhone() {
+    public String getHomePhone() {
         return homePhone;
     }
 
