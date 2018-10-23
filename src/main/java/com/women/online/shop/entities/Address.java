@@ -1,4 +1,6 @@
-package com.women.online.shop;
+package com.women.online.shop.entities;
+
+import com.women.online.shop.Country;
 
 public class Address {
 
@@ -20,5 +22,4 @@ public class Address {
 	public String toString() {
 		return "Address: " + country + ", " + city + ", " + street + " street " + homeNumber + "/" + apartment;
 	}
-
 }
