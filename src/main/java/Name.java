@@ -1,27 +1,29 @@
 public class Name {
     private String firstName;
-    private String middleName;
-    private String lastName;
+    private String secondName;
+    private String surname;
 
-    Name(String firstName, String middleName, String lastName) {
+    public Name(String firstName, String secondName, String surname) {
         this.firstName = firstName;
-        this.middleName = middleName;
-        this.lastName = lastName;
-    }
-
-    public String toString() {
-        return "User" + firstName + " " + middleName + " " + lastName + "";
+        this.secondName = secondName;
+        this.surname = surname;
     }
 
     public String getFirstName() {
         return firstName;
     }
 
-    public String getMiddleName() {
-        return middleName;
+    public String getSecondName() {
+        return secondName;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getSurname() {
+        return surname;
     }
+
+    @Override
+    public String toString() {
+        return firstName + " " + secondName + " " + surname;
+    }
+
 }
