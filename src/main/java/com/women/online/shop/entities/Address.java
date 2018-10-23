@@ -1,7 +1,5 @@
 package com.women.online.shop.entities;
 
-import com.women.online.shop.Country;
-
 public class Address {
 
 	private Country country;
