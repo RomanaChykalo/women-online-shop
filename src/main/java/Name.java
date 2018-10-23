@@ -1,12 +1,12 @@
 public class Name {
     private String firstName;
-    private String secondName;
-    private String surname;
+    private String midlName;
+    private String lastName;
 
     public Name(String firstName, String secondName, String surname) {
         this.firstName = firstName;
-        this.secondName = secondName;
-        this.surname = surname;
+        this.midlName = secondName;
+        this.lastName = surname;
     }
 
     public String getFirstName() {
@@ -14,16 +14,16 @@ public class Name {
     }
 
     public String getSecondName() {
-        return secondName;
+        return midlName;
     }
 
     public String getSurname() {
-        return surname;
+        return lastName;
     }
 
     @Override
     public String toString() {
-        return firstName + " " + secondName + " " + surname;
+        return firstName + " " + midlName + " " + lastName;
     }
 
 }
