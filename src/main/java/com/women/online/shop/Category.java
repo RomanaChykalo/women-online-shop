@@ -30,6 +30,6 @@ public enum Category {
         return Arrays.stream(values())
                 .filter(category -> category.shortName.equals(name))
                 .findFirst()
-                .orElseThrow(() -> new CategoryNotFoundException("Category shortName " + name + " not found"));
+                .orElseThrow(() -> new CategoryNotFoundException("Category with shortName " + name + " not found"));
     }
 }
