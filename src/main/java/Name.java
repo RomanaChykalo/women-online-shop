@@ -10,7 +10,7 @@ public class Name {
     }
 
     public String toString() {
-        return "User name is " + firstName + " " + middleName + " " + lastName + "";
+        return "User" + firstName + " " + middleName + " " + lastName + "";
     }
 
     public String getFirstName() {
