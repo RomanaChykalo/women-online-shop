@@ -1,3 +1,5 @@
+package com.women.online.shop.entities;
+
 public class Name {
     private String firstName;
     private String middleName;
