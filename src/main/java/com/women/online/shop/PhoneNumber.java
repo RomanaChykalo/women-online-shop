@@ -1,3 +1,5 @@
+package com.women.online.shop;
+
 public class PhoneNumber {
     private String mobilePhone;
     private String workingPhone;
@@ -13,9 +15,7 @@ public class PhoneNumber {
         return "mobile phone: " + mobilePhone + ", working number: " + workingPhone + ", home number: " + homePhone;
     }
 
-    public String getMobilePhone() {
-        return mobilePhone;
-    }
+    public String getMobilePhone() {return mobilePhone; }
 
     public String getWorkingPhone() {
         return workingPhone;
