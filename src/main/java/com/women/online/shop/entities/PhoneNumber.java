@@ -1,4 +1,4 @@
-package com.women.online.shop;
+package com.women.online.shop.entities;
 
 public class PhoneNumber {
     private String mobilePhone;
