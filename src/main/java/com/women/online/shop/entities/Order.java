@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Order {
+public class Order extends AbstractEntity {
 
     private List<Product> items = new ArrayList<>();
     private double orderAmount;
