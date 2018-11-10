@@ -1,4 +1,6 @@
-package com.women.online.shop;
+package com.women.online.shop.entities;
+
+import com.women.online.shop.exceptions.CategoryNotFoundException;
 
 import java.util.Arrays;
 
