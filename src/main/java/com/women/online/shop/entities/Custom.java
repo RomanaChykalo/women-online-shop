@@ -10,7 +10,9 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @NoArgsConstructor
@@ -21,7 +23,7 @@ public class Custom extends AbstractEntity {
             mappedBy = "customs",
             fetch = FetchType.LAZY
     )
-    private List<Product> products = new ArrayList<>();
+    private Set<Product> products = new HashSet<>();
     private double amount;
     private String city;
     @ManyToOne(
@@ -29,7 +31,7 @@ public class Custom extends AbstractEntity {
     )
     private User user;
 
-    public Custom(List<Product> products, double amount, String city) {
+    public Custom(Set<Product> products, double amount, String city) {
         this.products = products;
         this.amount = amount;
         this.city = city;
