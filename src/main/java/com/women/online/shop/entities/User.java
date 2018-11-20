@@ -30,7 +30,7 @@ public class User extends AbstractEntity {
             fetch = FetchType.EAGER,
             mappedBy = "user"
     )
-    private List<Custom> customs = new ArrayList<>();
+    private List<UserOrder> userOrders = new ArrayList<>();
     @ElementCollection(targetClass = Category.class)
     @Enumerated(EnumType.STRING)
     private Set<Category> favouriteCategories = new HashSet<>();

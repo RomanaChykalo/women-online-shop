@@ -5,7 +5,6 @@ import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import java.util.UUID;
 import java.time.LocalDateTime;
-
 @MappedSuperclass
 public abstract class AbstractEntity {
     @Id

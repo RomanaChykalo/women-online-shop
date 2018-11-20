@@ -9,18 +9,16 @@ import javax.persistence.FetchType;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Entity
 @NoArgsConstructor
 @Getter
 @Setter
-public class Custom extends AbstractEntity {
+public class UserOrder extends AbstractEntity {
     @ManyToMany(
-            mappedBy = "customs",
+            mappedBy = "userOrders",
             fetch = FetchType.LAZY
     )
     private Set<Product> products = new HashSet<>();
@@ -31,7 +29,7 @@ public class Custom extends AbstractEntity {
     )
     private User user;
 
-    public Custom(Set<Product> products, double amount, String city) {
+    public UserOrder(Set<Product> products, double amount, String city) {
         this.products = products;
         this.amount = amount;
         this.city = city;

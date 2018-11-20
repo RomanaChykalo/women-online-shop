@@ -16,6 +16,7 @@ import java.util.Set;
 @Getter
 @Setter
 public class Product extends AbstractEntity {
+    @Column(name = "name")
     private String name;
     private BigDecimal price;
     @Enumerated(EnumType.STRING)
@@ -25,7 +26,7 @@ public class Product extends AbstractEntity {
     private Set<Category> categories = new HashSet<>();
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "products_customs")
-    private List<Custom> customs = new ArrayList<>();
+    private List<UserOrder> userOrders = new ArrayList<>();
 
     public Product(String name, BigDecimal price, Country country, Set<Category> categories) {
         this.setName(name);
