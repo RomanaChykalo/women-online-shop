@@ -54,4 +54,18 @@ public class User extends AbstractEntity {
     public void removeCategories() {
         favouriteCategories.clear();
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "name=" + name +
+                ", email='" + email + '\'' +
+                ", dateOfBirth=" + dateOfBirth +
+                ", address=" + address +
+                ", phones=" + phones +
+                ", orders=" + userOrders +
+                ", favouriteCategories=" + favouriteCategories +
+                '}';
+    }
+
 }
