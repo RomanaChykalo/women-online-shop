@@ -1,8 +1,6 @@
 package com.women.online.shop.entities;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
@@ -16,6 +14,9 @@ import java.util.Set;
 @NoArgsConstructor
 @Getter
 @Setter
+@ToString
+@EqualsAndHashCode
+@Table(name = "users")
 public class User extends AbstractEntity {
     @Embedded
     private Name name;
@@ -33,6 +34,7 @@ public class User extends AbstractEntity {
     private List<UserOrder> userOrders = new ArrayList<>();
     @ElementCollection(targetClass = Category.class)
     @Enumerated(EnumType.STRING)
+    @Column(name = "category")
     private Set<Category> favouriteCategories = new HashSet<>();
 
     public User(Name name, String email, LocalDate dateOfBirth, Address address, Phones phones) {
@@ -54,18 +56,4 @@ public class User extends AbstractEntity {
     public void removeCategories() {
         favouriteCategories.clear();
     }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "name=" + name +
-                ", email='" + email + '\'' +
-                ", dateOfBirth=" + dateOfBirth +
-                ", address=" + address +
-                ", phones=" + phones +
-                ", orders=" + userOrders +
-                ", favouriteCategories=" + favouriteCategories +
-                '}';
-    }
-
 }
