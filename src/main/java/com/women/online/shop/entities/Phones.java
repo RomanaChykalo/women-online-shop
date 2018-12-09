@@ -8,8 +8,8 @@ import javax.persistence.Embeddable;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Name {
-    private String firstName;
-    private String middleName;
-    private String lastName;
+public class Phones {
+    private String mobilePhone;
+    private String workingPhone;
+    private String homePhone;
 }
