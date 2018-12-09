@@ -1,10 +1,10 @@
-
 package com.women.online.shop.controllers;
 
 import com.women.online.shop.controllers.dto.ProductDto;
 import com.women.online.shop.entities.Product;
 import com.women.online.shop.repositoties.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,26 +20,41 @@ public class ProductController {
     }
 
     @PostMapping("/products")
-    public void create(@RequestBody ProductDto productDto) {
+    public ResponseEntity create1(@RequestBody ProductDto productDto) {
         final Product product = new Product(productDto.getName(), productDto.getPrice(),
                 productDto.getCountry());
         productRepository.save(product);
+        return new ResponseEntity(HttpStatus.CREATED);
     }
 
     @GetMapping("/products")
-    public ResponseEntity<List<Product>> getProducts() {
+    public ResponseEntity getProducts() {
         final List<Product> all = productRepository.findAll();
-        return ResponseEntity.ok(all);
+        if (!all.isEmpty()) {
+            return ResponseEntity.ok(all);
+        } else {
+            return new ResponseEntity(HttpStatus.NOT_FOUND);
+        }
     }
 
     @GetMapping("/products/{id}")
-    public ResponseEntity<Optional<Product>> findById(@PathVariable String id) {
+    public ResponseEntity findById(@PathVariable String id) {
         final Optional<Product> product = productRepository.findById(id);
-        return ResponseEntity.ok(product);
+        if (product.isPresent()) {
+            return ResponseEntity.ok(product);
+        } else {
+            return new ResponseEntity(HttpStatus.NOT_FOUND);
+        }
     }
 
     @DeleteMapping("/products/{id}")
-    public void delete(@PathVariable String id) {
-        productRepository.deleteById(id);
+    public ResponseEntity delete(@PathVariable String id) {
+        final Optional<Product> product = productRepository.findById(id);
+        if (product.isPresent()) {
+            productRepository.deleteById(id);
+            return new ResponseEntity(HttpStatus.OK);
+        } else {
+            return new ResponseEntity(HttpStatus.NOT_FOUND);
+        }
     }
 }
